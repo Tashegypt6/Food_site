@@ -375,7 +375,6 @@ header .icons #menu-bars{
     box-shadow: var(--box-shadow);
 }
 
-
 .menu .box-container .box .image{
     height: 25rem;
     width: 100%;
@@ -393,8 +392,9 @@ header .icons #menu-bars{
 
 .menu .box-container .box .image .fa-heart{
     position: absolute;
+    opacity: 0;
     top: 2.5rem;
-    right: 2.5rem;
+    left: 2.5rem;
     height: 5rem;
     width: 5rem;
     line-height: 5rem;
@@ -403,8 +403,11 @@ header .icons #menu-bars{
     background: #fff;
     border-radius: 50%;
     color: var(--black);
+    transition: .5s ease;
 }
-
+.menu .box-container .box:hover .image .fa-heart{
+    opacity: 1;;
+}
 .menu .box-container .box .image .fa-heart:hover{
     background: var(--green);
     color: #fff;
@@ -544,7 +547,9 @@ header .icons #menu-bars{
 .order form .inputBox .btn{
     margin-top: 0;
 }
-
+.footer{
+    display: block;
+}
 .footer .box-container{
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(25rem,1fr));
@@ -576,24 +581,44 @@ header .icons #menu-bars{
 }
 
 .footer .credit{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     border-top: .1rem groove rgba(0, 0, 0, 0.1);
     font-size: 2rem;
     color: var(--black);
     padding: 0.5rem;
     padding-top: 1.5rem;
-    margin-top: 1.5rem;
 }
 
 .footer .credit span{
     color: var(--green);
 }
 
+.loader-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10000;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: 2sec ease;
+}
 
+.loader-container img{
+    width: 35rem;
+}
 
-
-
-
+.loader-container.fade-out{
+    opacity: 0;
+    transform: translateY(200%);
+}
 
 
 

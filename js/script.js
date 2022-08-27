@@ -21,14 +21,14 @@ window.onscroll = () =>{
       let offset = sec.offsetTop - 150;
       let id = sec.getAttribute('id');
 
-      if(top >= offset && top < offset + height){
-        navLinks.forEach(links =>{
-          links.classList.remove('active');
-          document.querySelector('header .navbar a[href*='+id+']').classList.add('active');
-        });
-      };
+  if(top >= offset && top < offset + height){
+          navLinks.forEach(links =>{
+            links.classList.remove('active');
+            document.querySelector('header .navbar a[href*='+id+']').classList.add('active');
+          });
+        };
 
-    });
+      });
 }
 
 let s_icon = document.querySelector('#search-icon');
@@ -82,3 +82,12 @@ var swiper = new Swiper(".home-slider", {
       },
     },
   });
+
+  function loader(){
+    document.querySelector('.loader-container').classList.add('fade-out');
+  }
+  function fadeOut(){
+    setInterval(loader,3000);
+  };
+
+  window.onload = fadeOut;
